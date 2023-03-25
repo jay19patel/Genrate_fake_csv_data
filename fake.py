@@ -5,17 +5,17 @@ import csv
 # create fake data for 100 students
 fake = Faker()
 students = []
-for i in range(100):
+for i in range(20):
     name = fake.name()
-    email = fake.email()
+    english = random.randint(50, 100)
     hindi = random.randint(50, 100)
     maths = random.randint(50, 100)
-    students.append([name,email, hindi, maths])
+    students.append([name, english, hindi, maths])
 
 # write the data to a CSV file
 with open("student_marks.csv", "w", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["Name", "Email", "Hindi", "Maths"])
+    writer.writerow(["Name", "English", "Hindi", "Maths"])
     writer.writerows(students)
 
 
